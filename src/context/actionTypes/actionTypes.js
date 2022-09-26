@@ -1,0 +1,5 @@
+export const ACTIONTYPES = {
+  LOGIN: 'LOGIN',
+  REGISTER: 'REGISTER',
+  GET_CONTACTS: 'GET_CONTACTS',
+};

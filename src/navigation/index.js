@@ -3,13 +3,19 @@ import {NavigationContainer} from '@react-navigation/native';
 import AuthNavigator from './AuthNavigator';
 import UserNavigator from './UserNavigator';
 import DrawerNavigator from './DrawerNavigator';
+import {GlobalState} from '../context/provider';
 
 const MainNavigator = () => {
+  const {
+    authState: {isLoggedIn},
+  } = GlobalState();
+  // console.log('GlobalData', GlobalData);
+  // console.log('authState', authState);
+  console.log('isLoggedIn', isLoggedIn);
+
   return (
     <NavigationContainer>
-      {/* <AuthNavigator /> */}
-      {/* <UserNavigator /> */}
-      <DrawerNavigator />
+      {isLoggedIn ? <DrawerNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 };
